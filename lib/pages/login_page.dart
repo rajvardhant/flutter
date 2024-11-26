@@ -36,11 +36,19 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           TextFormField(
+            obscureText: true,
             decoration: const InputDecoration(
               hintText: "Enter your Password",
               labelText: "Password",
             ),
           ),
+          const SizedBox(
+            height: 20.0,
+          ),
+            ElevatedButton(
+              style: TextButton.styleFrom(),
+              onPressed: () {print("Hi raj");},
+              child: const Text("Login"),)
             ],
           ),
         )
