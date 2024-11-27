@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startgit/utils/routes.dart';
 
 class HomePage extends StatelessWidget {
 final int days;
@@ -14,9 +15,41 @@ Widget build(BuildContext context) {
             backgroundColor: const Color.fromARGB(255, 218, 251, 187),
         ),
         body: Center(
-            child: Text("Welcome to $days days of flutter by $name"),
+          child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Welcome to $days days of flutter by $name"),
+
+          SizedBox(
+            height: 300.0,
+
+          ),
+
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: Padding(
+            padding: EdgeInsets.all(16),
+
+          child: ElevatedButton(
+            style: TextButton.styleFrom(
+              minimumSize: const Size(100, 50),
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, MyRoutes.loginRoute);
+            },
+            child: const Text("⬅️"),
+          ),
+        ),
+        ),
+
+
+
+  ],
+          ),
         ),
         drawer: const Drawer(),
         );
+
+
 }
 }
