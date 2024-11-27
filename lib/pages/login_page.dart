@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startgit/utils/routes.dart';
 // import 'package:startgit/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,8 +10,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   String name = "";
+  bool changeButton = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       onChanged: (value) {
                         name = value;
-                        setState(() {
-                        });
-
+                        setState(() {});
                       },
                     ),
                     TextFormField(
@@ -60,19 +59,36 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 30.0,
                     ),
-                    Container(
-                      width: 130,
-                      height: 40,
-                      alignment: Alignment.center,
-                      // ignore: sort_child_properties_last
-                      child:
-                      Text("Login",
-                      style: TextStyle(
-                        color: Colors.white,fontWeight: FontWeight.bold,fontSize: 15),
+                    InkWell(
+                      onTap: () async{
+                        setState(() {
+                          changeButton = true;
+                        });
+                        await Future.delayed(Duration(seconds: 1));
+                        Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      },
+                      child: AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        width: changeButton ? 50 : 130,
+                        height: 50,
+                        alignment: Alignment.center,
+                        // ignore: sort_child_properties_last
+                        child: changeButton
+                          ? Icon(
+                          Icons.done,
+                          color: Colors.white,)
+                        : Text(
+                          "Login",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
                         ),
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurpleAccent,
-                        borderRadius: BorderRadius.circular(8)
+                        decoration: BoxDecoration(
+                            color: Colors.deepPurpleAccent,
+                            // shape: changeButton ? BoxShape.circle :BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(changeButton ? 50 : 8)
+                            ),
                       ),
                     ),
                     // ElevatedButton(
