@@ -10,15 +10,13 @@ final int days;
 Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title:Text("New App"),
+            title:const Text("New App"),
             backgroundColor: const Color.fromARGB(255, 218, 251, 187),
         ),
         body: Center(
-            child: Container(
-                child: Text("Welcome to $days days of flutter by $name"),
-            ),
+            child: Text("Welcome to $days days of flutter by $name"),
         ),
-        drawer: Drawer(),
+        drawer: const Drawer(),
         );
 }
 }
