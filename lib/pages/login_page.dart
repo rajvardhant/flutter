@@ -13,15 +13,32 @@ class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool changeButton = false;
 
+  final _formKey = GlobalKey<FormState>();
+
+  moveToHome(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        changeButton = true;
+      });
+      await Future.delayed(Duration(seconds: 1));
+      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      setState(() {
+        changeButton = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
-        child: SingleChildScrollView(
+      color: Colors.white,
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
           child: Column(
             children: [
               Image.asset(
-                "assets/image/login_image.png",
+                "assets/image/heylogin.png",
                 fit: BoxFit.cover,
               ),
               const SizedBox(
@@ -44,6 +61,12 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: "Enter Username",
                         labelText: "Username",
                       ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Username cannot be empty";
+                        }
+                        return null;
+                      },
                       onChanged: (value) {
                         name = value;
                         setState(() {});
@@ -55,55 +78,55 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: "Enter your Password",
                         labelText: "Password",
                       ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Password cannot be empty";
+                        } else if (value.length <= 8) {
+                          return "Password should be greater than 8 character";
+                        }
+
+                        return null;
+                      },
                     ),
                     const SizedBox(
                       height: 30.0,
                     ),
-                    InkWell(
-                      onTap: () async{
-                        setState(() {
-                          changeButton = true;
-                        });
-                        await Future.delayed(Duration(seconds: 1));
-                        Navigator.pushNamed(context, MyRoutes.homeRoute);
-                      },
-                      child: AnimatedContainer(
-                        duration: Duration(seconds: 1),
-                        width: changeButton ? 50 : 130,
-                        height: 50,
-                        alignment: Alignment.center,
-                        // ignore: sort_child_properties_last
-                        child: changeButton
-                          ? Icon(
-                          Icons.done,
-                          color: Colors.white,)
-                        : Text(
-                          "Login",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
+                    Material(
+                      color: Colors.deepPurpleAccent,
+                      // shape: changeButton ? BoxShape.circle :BoxShape.rectangle,
+                      borderRadius:
+                          BorderRadius.circular(changeButton ? 50 : 8),
+                      child: InkWell(
+                        // splashColor: Colors.red,
+                        onTap: () => moveToHome(context),
+                        child: AnimatedContainer(
+                          duration: Duration(seconds: 1),
+                          width: changeButton ? 50 : 130,
+                          height: 50,
+                          alignment: Alignment.center,
+                          // ignore: sort_child_properties_last
+                          child: changeButton
+                              ? Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                )
+                              : Text(
+                                  "Login",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
                         ),
-                        decoration: BoxDecoration(
-                            color: Colors.deepPurpleAccent,
-                            // shape: changeButton ? BoxShape.circle :BoxShape.rectangle,
-                            borderRadius: BorderRadius.circular(changeButton ? 50 : 8)
-                            ),
                       ),
                     ),
-                    // ElevatedButton(
-                    //   style: TextButton.styleFrom(minimumSize: Size(100, 50)),
-                    //   // ignore: avoid_print
-                    //   onPressed: () {
-                    //     Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    //   },
-                    //   child: const Text("Login"),
-                    // )
                   ],
                 ),
               )
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
