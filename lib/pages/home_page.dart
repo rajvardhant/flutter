@@ -11,8 +11,14 @@ final int days;
 Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title:const Text("New App"),
-            backgroundColor: const Color.fromARGB(255, 218, 251, 187),
+            backgroundColor: Colors.deepPurpleAccent,
+            // elevation: 0.0,
+            // iconTheme: IconThemeData(color: Colors.black),
+
+            title: Text(
+              "Catalog App",
+              // style: TextStyle(color: Colors.black),
+            ),
         ),
         body: Center(
             child: Text("Welcome to $days days of flutter by $name"),
