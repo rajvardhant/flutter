@@ -8,7 +8,7 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageurl = "https://th.bing.com/th/id/OSK.HERO8VdSW-uOmzCH6b6tsGPFhyN2opdgiA5wF4tqo7pbmPA?rs=1&pid=ImgDetMain";
+    // final imageurl = "https://th.bing.com/th/id/OSK.HERO8VdSW-uOmzCH6b6tsGPFhyN2opdgiA5wF4tqo7pbmPA?rs=1&pid=ImgDetMain";
     return Drawer(
 
       child: Container(
@@ -22,10 +22,10 @@ class MyDrawer extends StatelessWidget {
                 child: UserAccountsDrawerHeader(
                   // decoration: BoxDecoration(color:Colors.red),
                   margin: EdgeInsets.zero,
-                  accountName: Text("Raj"),
-                  accountEmail: Text("raj@gamil.com"),
+                  accountName: Text("Raj Vardhan"),
+                  accountEmail: Text("rajvardhan@gamil.com"),
                   currentAccountPicture: CircleAvatar(
-                    backgroundImage: NetworkImage(imageurl),
+                    backgroundImage: AssetImage("assets/image/linkedin.jpg"),
                   ),
                 ),
                 ),
