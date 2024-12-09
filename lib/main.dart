@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
 import 'package:startgit/pages/home_page.dart';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:startgit/pages/login_page.dart';
-import 'package:startgit/utils/routes.dart';
+
+// import 'package:startgit/pages/login_page.dart';
+import 'package:startgit/utils/routes.dart' ;
 import 'package:startgit/widgets/themes.dart';
 
 void main() {

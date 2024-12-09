@@ -1,0 +1,60 @@
+{
+    "product": [
+        {
+            "id": "1",
+            "name": "iPhone 16 Pro",
+            "desc": "The future of phones with sleek titanium.",
+            "price": 1100,
+            "color": "#33505a",
+            "image": "https://www.apple.com/in/iphone-16-pro/images/overview/product-stories/design/display__f5509jfp9nyq_large_2x.jpg"
+        },
+        {
+            "id": "2",
+            "name": "iPhone 16 Pro Max",
+            "desc": "Larger display with cutting-edge technology.",
+            "price": 1200,
+            "color": "#6C26B6",
+            "image": "https://www.iphoned.nl/wp-content/uploads/2023/09/iphone-16-capture-1.jpg"
+        },
+        {
+            "id": "3",
+            "name": "iPhone 16",
+            "desc": "Simplicity meets modern innovation.",
+            "price": 1000,
+            "color": "#7D23DB",
+            "image": "https://cdn1.smartprix.com/rx-i5n1dTTOB-w1200-h1200/5n1dTTOB.jpg"
+        },
+        {
+            "id": "4",
+            "name": "iPhone 15 Pro",
+            "desc": "Refined performance with a bold design.",
+            "price": 1050,
+            "color": "#DC2493",
+            "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6525/6525424_sd.jpg"
+        },
+        {
+            "id": "5",
+            "name": "iPhone 15 Pro Max",
+            "desc": "Ultimate power packed into a premium frame.",
+            "price": 1150,
+            "color": "#8C1A5F",
+            "image": "https://th.bing.com/th/id/OIP.vz6dz6X1MH3y7Br0hSQRQgHaHa?rs=1&pid=ImgDetMain"
+        },
+        {
+            "id": "6",
+            "name": "iPhone 14 Pro",
+            "desc": "Classic elegance with professional-grade features.",
+            "price": 950,
+            "color": "#CE4924",
+            "image": "https://www.digitaltrends.com/wp-content/uploads/2022/09/iPhone-14-Pro-and-13-Pro-Camera-Modules.jpg?fit=3000%2C2000&p=1"
+        },
+        {
+            "id": "7",
+            "name": "iPhone 14 Pro Max",
+            "desc": "Pro Max performance for everyday excellence.",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://media.extra.com/s/aurora/100322230_800/Apple-iPhone-14-Pro-Max%2C-5G%2C-128GB%2C-Space-Black?locale=en-GB,en-*,*"
+        }
+    ]
+}
