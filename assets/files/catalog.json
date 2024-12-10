@@ -6,7 +6,7 @@
             "desc": "The future of phones with sleek titanium.",
             "price": 1100,
             "color": "#33505a",
-            "image": "https://www.apple.com/in/iphone-16-pro/images/overview/product-stories/design/display__f5509jfp9nyq_large_2x.jpg"
+            "image": "https://www.themobileindian.com/wp-content/uploads/2023/03/Iphone-15-pro-specs-1.jpg"
         },
         {
             "id": "2",
@@ -55,6 +55,14 @@
             "price": 999,
             "color": "#33505a",
             "image": "https://media.extra.com/s/aurora/100322230_800/Apple-iPhone-14-Pro-Max%2C-5G%2C-128GB%2C-Space-Black?locale=en-GB,en-*,*"
+        },
+        {
+            "id": "3",
+            "name": "iPhone x",
+            "desc": "Simplicity meets modern innovation.",
+            "price": 199,
+            "color": "#7D23DB",
+            "image": "https://i5.walmartimages.com/asr/3bc3aef9-c1a4-4c0c-a38d-abfc67c9f5c0_1.d4d6c54ce5681ee5e760cbcce7ae63ab.jpeg"
         }
     ]
 }
