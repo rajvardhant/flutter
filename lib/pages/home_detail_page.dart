@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:lorem_ipsum/lorem_ipsum.dart';
 import 'package:startgit/models/catalog.dart';
 import 'package:startgit/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -13,8 +13,11 @@ class HomeDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String text = loremIpsum(words: 10);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar:   Container(
         color: Colors.white,
@@ -22,7 +25,7 @@ class HomeDetailPage extends StatelessWidget {
                       alignment: MainAxisAlignment.spaceBetween,
                       buttonPadding: EdgeInsets.zero,
                       children: [
-                        "\$${catalog.price}".text.bold.xl2.make(),
+                        "\$${catalog.price}".text.bold.xl3.make(),
                         ElevatedButton(
                           onPressed: (){},
                           style: ButtonStyle(
@@ -30,11 +33,11 @@ class HomeDetailPage extends StatelessWidget {
                               Colors.red[100]
                             ),
                           ),
-                          child: "Buy".text.make(),
+                          child: "Add to cart".text.make(),
 
-                          ).wh(100,30)
+                          ).wh(130,40)
                       ],
-                    ).p1(),
+                    ).p12(),
       ),
       body:SafeArea(
         bottom: false,
@@ -43,10 +46,10 @@ class HomeDetailPage extends StatelessWidget {
           Hero(tag: Key(catalog.id.toString()),
         child:  Image.network(catalog.image),
 
-        ).p16(),
+        ).p20(),
         Expanded(
           child: VxArc(
-            height: 25.0,
+            height: 40.0,
             arcType: VxArcType.convey,
             edge: VxEdge.top,
 
@@ -58,6 +61,7 @@ class HomeDetailPage extends StatelessWidget {
                   catalog.name.text.xl2.color(MyTheme.darkbluishColor).bold.make(),
                   catalog.desc.text.textStyle(context.captionStyle).make(),
                   10.heightBox,
+                  text.text.textStyle(context.captionStyle).make(),
               ],
             ).py64(),
             ),
