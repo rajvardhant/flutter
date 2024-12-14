@@ -1,7 +1,7 @@
 # startgit
 
 A new Flutter project.
-# Shoyeb malik
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
